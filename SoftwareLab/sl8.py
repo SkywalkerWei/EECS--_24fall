@@ -1,8 +1,6 @@
 import lib601.le as le
 import lib601.util as util
 
-# Python 2.6.6 on Win32
-
 class Circuit:
     def __init__(self, components):
         self.components = components
@@ -98,7 +96,6 @@ class Resistor(Component):
         return le.Equation([1.0, -1.0, -self.r], [self.n1, self.n2, self.current], 0.0)
 
 class OpAmp(Component):
-
     def __init__(self, nPlus, nMinus, nOut, K=10000):
         self.K = K
         self.nPlus = nPlus
