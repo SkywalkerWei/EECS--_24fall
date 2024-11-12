@@ -27,8 +27,9 @@ class NodeToCurrents:
 
     def addCurrent(self, current, node, sign):
         if node not in self.node_currents:
-            self.node_currents[node] = [[current, sign]]
-        self.node_currents[node].append([current, sign])
+            self.node_currents[node] = [[current,sign]]
+        else:
+            self.node_currents[node].append([current, sign])
 
     def addCurrents(self, currents):
         for current, node, sign in currents:
