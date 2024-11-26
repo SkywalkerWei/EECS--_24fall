@@ -1,0 +1,22 @@
+def PTgD(val):
+    if val == 'disease':
+        return DDist({'posTest':0.9, 'negTest':0.1})
+    else:
+        return DDist({'posTest':0.5, 'negTest':0.5})
+PD = DDist({'disease':0.1, 'noDisease':0.9})
+
+def PRgF(val):
+    if val == 'f1':
+        return DDist({'r1':0.25, 'r2':0.25, 'r3':0.25, 'r4':0.25})
+    else:
+        return DDist({'r1':0.1, 'r2':0.1, 'r3':0.1, 'r4':0.7})
+PF = DDist({'f1':0.5, 'f2':0.5})
+
+print('-------WK10.1.7  Part1-------')
+print(bayesEvidence(PTgD, PD, 'posTest'))
+print(bayesEvidence(PTgD, PD, 'negTest'))
+print(bayesEvidence(PRgF, PF, 'r3'))
+print(bayesEvidence(PRgF, PF, 'r4'))
+print('-------WK10.1.7  Part2-------')
+print(totalProbability(PTgD, PD))
+print(totalProbability(PRgF, PF))
